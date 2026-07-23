@@ -1,0 +1,38 @@
+name: fetch-images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and compress generated images
+        run: |
+          set -euo pipefail
+          mkdir -p images
+          base="https://d8j0ntlcm91z4.cloudfront.net/user_2zKID9uGHH3s9RILDyuHqKJaCTk"
+          curl -fSLo images/hero.png     "$base/hf_20260723_101118_12b56c10-1935-4f37-a807-cbeb50138cec.png"
+          curl -fSLo images/doctor-1.png "$base/hf_20260723_101120_f13a2f07-f6f7-45f9-ad46-b5802398755d.png"
+          curl -fSLo images/doctor-2.png "$base/hf_20260723_101122_b3dc1c6a-86a4-41da-bc16-926177d8ce36.png"
+          curl -fSLo images/room.png     "$base/hf_20260723_101124_db658df9-f06e-4489-aedc-dddeaed379ca.png"
+          curl -fSLo images/crown.png    "$base/hf_20260723_101414_b5bb1416-2249-4d1f-b935-f41754b3036a.png"
+          for f in hero room crown; do
+            convert "images/$f.png" -resize '1920x1920>' -quality 84 "images/$f.jpg"
+          done
+          for f in doctor-1 doctor-2; do
+            convert "images/$f.png" -resize '900x900>' -quality 84 "images/$f.jpg"
+          done
+          rm images/*.png
+          ls -la images
+      - name: Commit images to branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images
+          git commit -m "Add generated site images (fetched via CI)"
+          git push

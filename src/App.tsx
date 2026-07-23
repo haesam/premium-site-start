@@ -26,6 +26,7 @@ export default function App() {
         playsInline
         className="absolute inset-0 z-0 w-full h-[130%] object-cover object-top"
       >
+        <source src="/hero.mp4" type="video/mp4" />
         <source
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4"
           type="video/mp4"

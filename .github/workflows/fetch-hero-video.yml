@@ -1,0 +1,20 @@
+name: Fetch hero video
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download hero video and commit it
+        run: |
+          mkdir -p public
+          curl -fSL --retry 3 -o public/hero.mp4 \
+            "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260714_113715_c7e0daa0-8bdd-4486-a2da-040901f8f0ea.mp4"
+          ls -la public/hero.mp4
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/hero.mp4
+          git commit -m "Add hero background video asset"
+          git push

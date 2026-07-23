@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>결 치과의원 — 치아의 결을 지키는 진료</title>
+  <meta name="description" content="마포 결 치과의원. 꼭 필요한 치료만, 오래 가는 치료로. 임플란트 · 교정 · 심미보철 · 정기검진" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo">결<span class="logo-dot">.</span> <span class="logo-sub">치과의원</span></a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="#philosophy">진료 철학</a>
+        <a href="#services">진료 과목</a>
+        <a href="#doctor">의료진</a>
+        <a href="#space">공간</a>
+        <a href="#info">진료 안내</a>
+      </nav>
+      <a href="#reserve" class="btn btn-small">예약 문의</a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">마포 · 망원역 2번 출구</p>
+        <h1 class="hero-title">
+          <span class="line reveal d1">좋은 치료는,</span>
+          <span class="line reveal d2"><em>결</em>을 거스르지 않습니다</span>
+        </h1>
+        <p class="hero-desc reveal d3">
+          꼭 필요한 치료만 정직하게. 결 치과의원은 치아 본연의 결을
+          지키는 보존 중심 진료를 원칙으로 합니다.
+        </p>
+        <div class="reveal d4">
+          <a href="#reserve" class="btn btn-primary">진료 예약하기</a>
+        </div>
+      </div>
+
+      <div class="hero-art reveal d3" aria-hidden="true">
+        <!-- 치아 라인 드로잉 — 로드 시 스스로 그려짐 -->
+        <svg viewBox="0 0 320 380" fill="none" class="tooth-svg">
+          <path class="draw draw-1" d="M160 40 C 100 40, 60 80, 58 140 C 56 190, 76 220, 88 270 C 96 305, 100 340, 118 340 C 136 340, 132 290, 146 262 C 152 250, 168 250, 174 262 C 188 290, 184 340, 202 340 C 220 340, 224 305, 232 270 C 244 220, 264 190, 262 140 C 260 80, 220 40, 160 40 Z"/>
+          <path class="draw draw-2" d="M110 92 C 128 74, 148 70, 160 70" />
+          <circle class="draw draw-3" cx="160" cy="190" r="150" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+
+    <a href="#philosophy" class="scroll-hint" aria-label="아래로 스크롤">
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ===== 진료 철학 ===== -->
+  <section class="section philosophy" id="philosophy">
+    <div class="container split">
+      <div class="split-left reveal">
+        <p class="eyebrow">진료 철학</p>
+        <h2 class="serif-quote">
+          “깎아내는 치료보다,<br />
+          지켜내는 치료가<br />
+          먼저입니다.”
+        </h2>
+      </div>
+      <div class="split-right reveal d2">
+        <p>
+          치아는 한번 깎으면 되돌릴 수 없습니다. 결 치과의원은 진단에
+          가장 많은 시간을 쓰고, 자연 치아를 살릴 수 있는 방법부터
+          찾습니다.
+        </p>
+        <p>
+          치료가 필요하지 않다면, 필요하지 않다고 말씀드립니다.
+          과잉진료 없는 정직한 진료 — 그것이 개원 이후 지금까지 지켜온
+          단 하나의 원칙입니다.
+        </p>
+        <ul class="principles">
+          <li><strong>정직한 진단</strong>불필요한 치료를 권하지 않습니다</li>
+          <li><strong>보존 우선</strong>자연 치아를 살리는 방법부터 찾습니다</li>
+          <li><strong>충분한 설명</strong>치료 전 과정과 비용을 미리 안내합니다</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 진료 과목 ===== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <p class="eyebrow reveal">진료 과목</p>
+      <h2 class="section-title reveal">필요한 만큼만, 오래 가도록</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6 C 13 6, 9 11, 9 17 C 9 22, 12 25, 13 30 C 13.6 33, 14 35.5 16 35.5 C 18 35.5, 17.5 30, 19 27.5 C 19.4 26.8, 20.6 26.8, 21 27.5 C 22.5 30, 22 35.5, 24 35.5 C 26 35.5, 26.4 33, 27 30 C 28 25, 31 22, 31 17 C 31 11, 27 6, 20 6 Z"/>
+            <path d="M20 17 L 20 24" stroke-linecap="round"/>
+          </svg>
+          <h3>임플란트</h3>
+          <p>상실된 치아를 정밀 진단 기반으로 식립합니다. 뼈 상태에 맞춘 계획으로 오래 쓰는 임플란트를 지향합니다.</p>
+        </article>
+        <article class="card reveal d1">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M6 20 C 12 12, 28 12, 34 20" stroke-linecap="round"/>
+            <path d="M6 26 C 12 18, 28 18, 34 26" stroke-linecap="round"/>
+            <circle cx="10" cy="22.5" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="20" cy="19.5" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="30" cy="22.5" r="1.6" fill="currentColor" stroke="none"/>
+          </svg>
+          <h3>치아교정</h3>
+          <p>투명교정과 부분교정 중심으로, 생활에 부담이 적은 교정 계획을 세웁니다.</p>
+        </article>
+        <article class="card reveal d2">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M12 30 L 28 10" stroke-linecap="round"/>
+            <path d="M25 7 L 31 13 L 28 16 L 22 10 Z" stroke-linejoin="round"/>
+            <path d="M9 27 L 13 31 L 8 32 Z" stroke-linejoin="round"/>
+          </svg>
+          <h3>심미보철</h3>
+          <p>자연 치아의 색과 결을 살린 세라믹 보철. 눈에 띄지 않는 것이 가장 좋은 보철입니다.</p>
+        </article>
+        <article class="card reveal">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="13"/>
+            <path d="M20 12 L 20 20 L 26 24" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>충치 · 신경치료</h3>
+          <p>초기 충치는 최소 삭제로, 깊은 충치는 정밀 신경치료로 자연 치아의 수명을 연장합니다.</p>
+        </article>
+        <article class="card reveal d1">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M8 24 C 8 16, 14 12, 20 12 C 26 12, 32 16, 32 24" stroke-linecap="round"/>
+            <path d="M8 24 C 10 28, 14 30, 20 30 C 26 30, 30 28, 32 24" stroke-linecap="round"/>
+            <path d="M20 12 L 20 8" stroke-linecap="round"/>
+          </svg>
+          <h3>잇몸치료</h3>
+          <p>치아를 받치는 잇몸부터 건강하게. 스케일링과 잇몸 관리로 치주질환을 예방합니다.</p>
+        </article>
+        <article class="card reveal d2">
+          <svg class="card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M10 8 H 30 V 32 H 10 Z" stroke-linejoin="round"/>
+            <path d="M15 16 H 25 M 15 21 H 25 M 15 26 H 21" stroke-linecap="round"/>
+          </svg>
+          <h3>정기검진</h3>
+          <p>6개월마다의 검진이 가장 저렴한 치료입니다. 구강 상태를 기록하고 변화를 추적합니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 의료진 ===== -->
+  <section class="section doctor" id="doctor">
+    <div class="container split">
+      <div class="doctor-photo reveal" aria-hidden="true">
+        <!-- 대표원장 초상 일러스트 (임의 생성) -->
+        <svg viewBox="0 0 400 480" class="portrait-svg">
+          <defs>
+            <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#DCE9E4"/>
+              <stop offset="1" stop-color="#C2D8CF"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="480" rx="6" fill="url(#pg)"/>
+          <circle cx="200" cy="180" r="70" fill="#F8F7F4"/>
+          <path d="M200 270 C 130 270, 90 320, 80 480 L 320 480 C 310 320, 270 270, 200 270 Z" fill="#0E5F52"/>
+          <path d="M200 270 C 185 270, 175 280, 175 295 L 200 330 L 225 295 C 225 280, 215 270, 200 270 Z" fill="#F8F7F4"/>
+          <rect x="196" y="300" width="8" height="60" fill="#0A4A40"/>
+        </svg>
+        <span class="photo-caption">대표원장 김서결</span>
+      </div>
+      <div class="split-right reveal d2">
+        <p class="eyebrow">의료진</p>
+        <h2 class="section-title">한 명의 원장이<br />처음부터 끝까지</h2>
+        <p>
+          상담부터 치료, 사후 관리까지 대표원장이 직접 진료합니다.
+          진료의 연속성이 곧 치료의 질이라고 믿기 때문입니다.
+        </p>
+        <ul class="credentials">
+          <li>치과대학 치의학과 졸업</li>
+          <li>통합치의학과 전문의</li>
+          <li>대한치과보존학회 정회원</li>
+          <li>대한임플란트학회 정회원</li>
+          <li>前 서울 OO치과 진료원장</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 공간 ===== -->
+  <section class="section space" id="space">
+    <div class="container">
+      <p class="eyebrow reveal">공간</p>
+      <h2 class="section-title reveal">긴장을 덜어내는 공간</h2>
+      <div class="gallery">
+        <figure class="gallery-item reveal">
+          <svg viewBox="0 0 480 360" class="gallery-svg" aria-hidden="true">
+            <rect width="480" height="360" fill="#EAF0EC"/>
+            <rect x="40" y="200" width="400" height="14" rx="7" fill="#0E5F52" opacity="0.85"/>
+            <rect x="70" y="214" width="14" height="100" fill="#0E5F52" opacity="0.6"/>
+            <rect x="396" y="214" width="14" height="100" fill="#0E5F52" opacity="0.6"/>
+            <circle cx="120" cy="120" r="46" fill="#F8F7F4"/>
+            <rect x="220" y="70" width="200" height="110" rx="4" fill="#F8F7F4"/>
+            <rect x="240" y="90" width="160" height="8" rx="4" fill="#C2D8CF"/>
+            <rect x="240" y="110" width="120" height="8" rx="4" fill="#C2D8CF"/>
+          </svg>
+          <figcaption>대기 공간 — 병원 냄새 대신 따뜻한 조도</figcaption>
+        </figure>
+        <figure class="gallery-item reveal d1">
+          <svg viewBox="0 0 480 360" class="gallery-svg" aria-hidden="true">
+            <rect width="480" height="360" fill="#E3ECE7"/>
+            <path d="M100 260 L 190 260 L 230 160 L 300 160" stroke="#0E5F52" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+            <circle cx="330" cy="120" r="34" fill="#F8F7F4"/>
+            <rect x="80" y="270" width="180" height="16" rx="8" fill="#0E5F52" opacity="0.5"/>
+            <rect x="360" y="60" width="80" height="240" rx="4" fill="#F8F7F4"/>
+          </svg>
+          <figcaption>진료실 — 모든 체어는 개별 독립 공간</figcaption>
+        </figure>
+        <figure class="gallery-item reveal d2">
+          <svg viewBox="0 0 480 360" class="gallery-svg" aria-hidden="true">
+            <rect width="480" height="360" fill="#EDF1EE"/>
+            <rect x="60" y="80" width="150" height="200" rx="4" fill="#F8F7F4"/>
+            <rect x="80" y="100" width="110" height="70" rx="4" fill="#C2D8CF"/>
+            <rect x="80" y="190" width="110" height="10" rx="5" fill="#DCE9E4"/>
+            <rect x="80" y="212" width="80" height="10" rx="5" fill="#DCE9E4"/>
+            <circle cx="330" cy="180" r="70" fill="#0E5F52" opacity="0.85"/>
+            <circle cx="330" cy="180" r="40" fill="#F8F7F4"/>
+          </svg>
+          <figcaption>상담실 — 진단 결과를 함께 보며 설명합니다</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 진료 안내 ===== -->
+  <section class="section info" id="info">
+    <div class="container split">
+      <div class="split-left reveal">
+        <p class="eyebrow">진료 안내</p>
+        <h2 class="section-title">진료 시간</h2>
+        <table class="hours">
+          <tbody>
+            <tr><th>평일</th><td>09:30 – 18:30</td></tr>
+            <tr><th>토요일</th><td>09:30 – 14:00</td></tr>
+            <tr><th>점심시간</th><td>13:00 – 14:00</td></tr>
+            <tr class="closed"><th>일요일 · 공휴일</th><td>휴진</td></tr>
+          </tbody>
+        </table>
+        <p class="hours-note">토요일은 점심시간 없이 진료합니다.</p>
+      </div>
+      <div class="split-right reveal d2">
+        <h2 class="section-title">오시는 길</h2>
+        <div class="map-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 480 280" class="map-svg">
+            <rect width="480" height="280" fill="#EAF0EC"/>
+            <path d="M0 90 H 480 M0 190 H 480 M 120 0 V 280 M 300 0 V 280" stroke="#DCE9E4" stroke-width="14"/>
+            <circle cx="300" cy="90" r="12" fill="#0E5F52"/>
+            <path d="M300 90 m 0 -30 a 30 30 0 1 1 -0.01 0" fill="none" stroke="#0E5F52" stroke-width="3" opacity="0.4"/>
+          </svg>
+        </div>
+        <address class="address">
+          서울 마포구 망원로 12, 소망빌딩 3층<br />
+          망원역 2번 출구에서 도보 2분<br />
+          <a href="tel:0212345678" class="tel">02-1234-5678</a>
+        </address>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 예약 CTA ===== -->
+  <section class="cta-band" id="reserve">
+    <div class="container cta-inner reveal">
+      <p class="eyebrow eyebrow-light">예약 문의</p>
+      <h2 class="cta-title">치아의 결을 지키는 첫걸음,<br /><em>검진</em>부터 시작하세요</h2>
+      <a href="tel:0212345678" class="cta-phone">02-1234-5678</a>
+      <p class="cta-note">전화 또는 카카오톡 채널 <strong>@결치과</strong>로 예약하실 수 있습니다.</p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-logo">결 치과의원</p>
+      <p class="footer-meta">
+        대표자 김서결 · 사업자등록번호 000-00-00000<br />
+        서울 마포구 망원로 12, 소망빌딩 3층 · 02-1234-5678
+      </p>
+      <p class="footer-copy">© 2026 Gyeol Dental Clinic. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

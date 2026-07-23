@@ -1,5 +1,7 @@
 name: fetch-images
-on: workflow_dispatch
+on:
+  push:
+    branches: [claude/dental-clinic-homepage-z60nv6]
 permissions:
   contents: write
 jobs:
@@ -9,6 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download generated images and commit
         run: |
+          if [ -f images/clinic-interior.png ]; then echo "images already fetched"; exit 0; fi
           mkdir -p images
           curl -fSL -o images/clinic-interior.png "https://d8j0ntlcm91z4.cloudfront.net/user_2zKID9uGHH3s9RILDyuHqKJaCTk/hf_20260723_092837_c4b51081-1fe5-42ad-ba56-30c8052a1cbc.png"
           curl -fSL -o images/doctor-kim.png "https://d8j0ntlcm91z4.cloudfront.net/user_2zKID9uGHH3s9RILDyuHqKJaCTk/hf_20260723_092840_3b3761f0-af2b-4805-b432-ac7a552d7307.png"

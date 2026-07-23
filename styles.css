@@ -52,6 +52,14 @@ h2 { font-size: clamp(28px, 4vw, 44px); }
 
 .lead { font-size: 19px; color: var(--muted); }
 
+.about-photo {
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  background: var(--mint);
+}
+.about-photo img { width: 100%; display: block; }
+
 /* ============ Buttons ============ */
 .btn {
   display: inline-block;
@@ -268,10 +276,18 @@ h2 { font-size: clamp(28px, 4vw, 44px); }
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
-.doctor-photo { width: 132px; margin-bottom: 24px; }
-.doctor-photo svg { width: 100%; display: block; }
-.ph-bg { fill: var(--mint); }
-.ph-line { fill: none; stroke: var(--pine); stroke-width: 3; opacity: 0.6; }
+.doctor-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--mint);
+}
+.doctor-photo img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
 .doctor h3 { font-size: 22px; }
 .doctor h3 span { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--muted); margin-left: 6px; }
 .doctor-role { color: var(--pine); font-weight: 600; font-size: 15px; margin: 6px 0 14px; }

@@ -22,10 +22,10 @@ jobs:
           curl -fSLo images/room.png     "$base/hf_20260723_101124_db658df9-f06e-4489-aedc-dddeaed379ca.png"
           curl -fSLo images/crown.png    "$base/hf_20260723_101414_b5bb1416-2249-4d1f-b935-f41754b3036a.png"
           for f in hero room crown; do
-            convert "images/$f.png" -resize '1920x1920>' -quality 84 "images/$f.jpg"
+            ffmpeg -y -i "images/$f.png" -vf "scale='min(1920,iw)':-2" -q:v 3 "images/$f.jpg"
           done
           for f in doctor-1 doctor-2; do
-            convert "images/$f.png" -resize '900x900>' -quality 84 "images/$f.jpg"
+            ffmpeg -y -i "images/$f.png" -vf "scale='min(900,iw)':-2" -q:v 3 "images/$f.jpg"
           done
           rm images/*.png
           ls -la images

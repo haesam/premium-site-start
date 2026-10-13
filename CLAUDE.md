@@ -24,14 +24,24 @@ If the user explicitly asks for a different stack, follow them. Otherwise defaul
 
 ## Skills to use proactively
 
-When relevant, use these skills (already documented in the public Claude marketplace):
+When relevant, use these skills. `frontend-design` ships in this repo; the rest are installed by `./setup.sh`.
 
-- `frontend-design` for production-grade UI components
-- `ui-ux-pro-max` for visual style decisions, palette generation, and product-type-specific patterns
-- `theme-factory` when the user wants a quick-start theme
-- `webapp-testing` to verify the site works in a real browser before declaring it done
+- `frontend-design` for aesthetic direction and non-templated UI choices
+- `design-taste-frontend` for the overall structure and mood of landing / intro pages (dials: VARIANCE, MOTION, DENSITY, 1-10)
+- `emil-design-eng` for polish: spacing, press feel, popup direction, animation easing
+- `impeccable` to catch "AI-looking" patterns. After building, run `npx --yes impeccable@latest detect <html file or folder>` (HTML, never a lone CSS file) and fix what it reports
+- `ui-ux-pro-max` (optional plugin) for palettes, font pairings, product-type patterns
 
-If a skill isn't installed, suggest the user install it. Don't refuse to do the task without it.
+If a skill isn't installed, tell the user to run `./setup.sh`. Don't refuse to do the task without it.
+
+## Verify before declaring done
+
+Use the Playwright MCP (`.mcp.json`) to open the dev server, capture desktop (1440px) and mobile (390px) screenshots, and fix spacing, overflow, alignment and mobile-menu issues. Compare before/after. Never say "done" without having looked at both.
+
+## Before you build
+
+If the user gave no brief, ask once for: industry, audience, desired feeling, 1-2 reference sites, pages, brand colors/fonts. Point them to `BRIEF-TEMPLATE.md`. Reference sites matter more than any skill.
+Skills don't supply taste, and first output is a draft: expect one or two fix rounds.
 
 ## Hero section guidelines
 

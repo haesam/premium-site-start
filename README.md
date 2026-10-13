@@ -5,13 +5,27 @@ Claude Code로 **프리미엄 느낌의 웹사이트**를 만들기 위한 초�
 
 ## 3단계 시작
 
-**0. 준비물**: [Node.js](https://nodejs.org/) 22.20 이상(LTS), [Claude Code](https://claude.com/product/claude-code)
+**0. 준비물**: [Claude Code](https://claude.com/product/claude-code), [Node.js](https://nodejs.org/) 22.20 이상(LTS), Git
+Windows는 Claude Code가 요구하는 [Git for Windows](https://git-scm.com/download/win)가 있으면 `setup.sh`가 그대로 동작합니다.
+
+Node.js가 없거나 낮다면 터미널(또는 Claude에게 시켜서)에 아래를 실행합니다. 설치 후에는 **터미널·Claude Code를 닫았다가 다시 여세요**(새 설치가 인식되려면 필요합니다).
+```bash
+winget install OpenJS.NodeJS.LTS     # Windows (PowerShell)
+brew install node                    # Mac (Homebrew가 없으면 nodejs.org에서 LTS 설치)
+node --version                       # v22.20 이상이면 성공
+```
 
 **1. 이 저장소 복사**: GitHub에서 `Use this template` 또는 `git clone`
 
 **2. 스킬 설치 (약 3분)**
 ```bash
 ./setup.sh
+```
+`setup.sh`가 안 되면 아래 세 줄을 순서대로 직접 실행해도 같은 결과입니다(Windows PowerShell 포함 어디서나 동작).
+```bash
+npx --yes skills@latest add emilkowalski/skills --skill "emil-design-eng" --agent claude-code --yes --copy
+npx --yes skills@latest add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend" --agent claude-code --yes --copy
+npx --yes impeccable@latest install --providers=claude --scope=project
 ```
 끝나면 Claude Code를 **완전히 종료했다가 다시 실행**하고 아래를 입력합니다.
 ```
@@ -40,9 +54,37 @@ Claude Code로 **프리미엄 느낌의 웹사이트**를 만들기 위한 초�
 ./setup.sh --figma           # Figma 파일에서 색·간격을 직접 읽기 (Figma 계정 필요, 현재 베타 무료, 추후 유료 전환 예정)
 ./setup.sh --ui-ux-pro-max   # 팔레트 161종·폰트 페어링 57종 안내 (플러그인)
 ```
-### 고급: 스크롤 연출 사이트 (처음엔 불필요)
-- **scroll-world** ([oso95/scroll-world](https://github.com/oso95/scroll-world), MIT): 스크롤에 따라 카메라가 장면 사이를 이어서 날아가는 몰입형 랜딩. Higgsfield로 장면·영상을 생성하므로 해당 서비스 사용이 필요하고 비용이 들 수 있습니다. Claude Code에서 `/plugin marketplace add oso95/scroll-world` 후 `/plugin`에서 설치합니다.
-- `advanced/3d-scroll-website/`: 캔버스 프레임 시퀀스 기반 3D 스크롤 사이트 스킬. 쓰려면 `.claude/skills/`로 옮기세요. **출처·라이선스를 확인하지 못했습니다.**
+## 전문가용: 한 단계 더 나아가기
+
+기본 세팅에 익숙해진 뒤에 보세요. 초보자는 건너뛰어도 됩니다.
+
+### 1) 스크롤 영상 배경 (Higgsfield 연동)
+스크롤하면 카메라가 장면 안으로 날아 들어가고 다음 장면으로 끊김 없이 이어지는 몰입형 랜딩입니다. [oso95/scroll-world](https://github.com/oso95/scroll-world)(MIT) 스킬이 장면 이미지·영상 생성부터 스크롤 연동 코드까지 만듭니다.
+```
+/plugin marketplace add oso95/scroll-world
+/plugin install scroll-world@scroll-world
+```
+설치 후 "스크롤하면 장면을 날아다니는 랜딩 페이지 만들어줘"라고 요청하거나 `/scroll-world`를 실행합니다.
+
+**먼저 알아둘 것 (원본 저장소 기준)**
+- 사전 준비: Higgsfield CLI 로그인(`higgsfield auth login`)과 크레딧, Monid CLI(API 키·잔액), `ffmpeg`, Python 3 + Pillow
+- **유료입니다.** 원본 문서에 6장면 1080p 기준 약 27달러로 적혀 있고, 모바일(세로) 영상까지 만들면 영상 생성이 두 배가 됩니다. 스킬이 생성 전에 예상 비용을 보여주고 승인을 받습니다.
+- 서비스 가격·사양은 바뀔 수 있으니 실행 전 원본 README를 확인하세요.
+
+### 2) 인터랙션 효과 요청하기
+`CLAUDE.md`가 Motion 라이브러리를 기본으로 쓰도록 정해 두었습니다. 구체적으로 요청할수록 정확합니다.
+- 커서를 따라다니는 작은 점 / 버튼이 마우스에 끌리는 효과
+- 헤드라인 단어별 등장, 스크롤에 따른 배경 패럴랙스
+- 스크롤 진행에 따라 이미지·텍스트가 바뀌는 섹션 (sticky + scroll progress)
+- 무한 흐르는 로고 줄(marquee), 숫자 카운터 ([Magic UI](https://magicui.design), [21st.dev](https://21st.dev) 컴포넌트 활용)
+
+요청 예: *"히어로 제목이 단어별로 올라오며 등장하고, 스크롤하면 배경 이미지가 천천히 줌인되게 해줘. prefers-reduced-motion도 지원하고 모바일 성능이 떨어지면 효과를 줄여줘."*
+`design-taste-frontend`의 **MOTION** 다이얼(1~10)을 높이면 전반적인 움직임이 늘어납니다.
+
+### 3) 그 밖에
+- `./setup.sh --figma` : Figma 디자인의 색·간격을 읽어 구현 (Figma 계정 필요)
+- `./setup.sh --ui-ux-pro-max` : 팔레트·폰트 페어링 데이터 플러그인
+- `advanced/3d-scroll-website/` : 캔버스 프레임 시퀀스 기반 3D 스크롤 사이트 스킬. 쓰려면 `.claude/skills/`로 옮기세요. **출처·라이선스를 확인하지 못했습니다.**
 
 ## 확인과 문제 해결
 ```bash

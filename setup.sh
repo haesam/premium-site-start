@@ -15,7 +15,7 @@ done
 
 run() { echo "+ $*"; [ "$DRY" -eq 1 ] || "$@"; }
 
-command -v node >/dev/null || { echo "Node.js not found. Install LTS from https://nodejs.org/ and rerun." >&2; exit 1; }
+command -v node >/dev/null || { echo "Node.js not found. Windows: winget install OpenJS.NodeJS.LTS | Mac: brew install node | or https://nodejs.org/ (LTS). Then reopen the terminal and rerun." >&2; exit 1; }
 need="22.20.0"; have="$(node --version | sed 's/^v//')"
 if [ "$(printf '%s\n%s\n' "$need" "$have" | sort -V | head -n1)" != "$need" ]; then
   echo "Node.js $have is older than $need (required by the skill installer). Upgrade and rerun." >&2

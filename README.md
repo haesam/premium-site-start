@@ -40,7 +40,9 @@ Claude Code로 **프리미엄 느낌의 웹사이트**를 만들기 위한 초�
 ./setup.sh --figma           # Figma 파일에서 색·간격을 직접 읽기 (Figma 계정 필요, 현재 베타 무료, 추후 유료 전환 예정)
 ./setup.sh --ui-ux-pro-max   # 팔레트 161종·폰트 페어링 57종 안내 (플러그인)
 ```
-`advanced/3d-scroll-website/`는 3D 스크롤 사이트용 고급 스킬입니다. 쓰려면 `.claude/skills/`로 옮기세요. 처음엔 불필요합니다.
+### 고급: 스크롤 연출 사이트 (처음엔 불필요)
+- **scroll-world** ([oso95/scroll-world](https://github.com/oso95/scroll-world), MIT): 스크롤에 따라 카메라가 장면 사이를 이어서 날아가는 몰입형 랜딩. Higgsfield로 장면·영상을 생성하므로 해당 서비스 사용이 필요하고 비용이 들 수 있습니다. Claude Code에서 `/plugin marketplace add oso95/scroll-world` 후 `/plugin`에서 설치합니다.
+- `advanced/3d-scroll-website/`: 캔버스 프레임 시퀀스 기반 3D 스크롤 사이트 스킬. 쓰려면 `.claude/skills/`로 옮기세요. **출처·라이선스를 확인하지 못했습니다.**
 
 ## 확인과 문제 해결
 ```bash
@@ -66,5 +68,5 @@ rm -rf .claude/skills/emil-design-eng .claude/skills/design-taste-frontend .clau
 ```
 
 ---
-설치 흐름은 [lazyowen 가이드](https://lazyowen.com/guides/claude-designer-kill)를 참고해 구성했습니다.
-`.claude/skills/frontend-design` 라이선스: 폴더 내 `LICENSE.txt`. `advanced/3d-scroll-website`는 출처 확인 중입니다.
+외부 스킬은 각 원본 저장소의 라이선스를 따릅니다.
+`.claude/skills/frontend-design` 라이선스: 폴더 내 `LICENSE.txt`.
